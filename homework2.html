@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 class= "now"></h1>
+<script>
+    const clockContent  = document.querySelector('.now');
+    
+    const getTime = () => {
+        let date = new Date ();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        hour<10 ? hour =`0${hour}` : hour
+        minutes<10 ? minutes =`0${minutes}` : minutes
+        seconds<10 ? seconds = `0${seconds}` : seconds
+        return clockContent.innerText = hour+" : " + minutes + " : "+ seconds;  
+    }
+    console.log(getTime())
+    const initTime = () => {
+        getTime();
+        return setInterval(getTime, 1000);
+    }
+     initTime();
+
+</script>
+    
+</body>
+</html>
